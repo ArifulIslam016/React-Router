@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router";
 
 const SingleUser = ({ user }) => {
@@ -8,11 +8,16 @@ const SingleUser = ({ user }) => {
     padding:"20px",
     margin:"30px"
   }
+  const [status, setstatus] = useState(false);
   return (
     <div style={Style}>
       <h1>{name}</h1>
       <h2>{user.address.city}</h2>
       <Link to={`/User/${id}`}>See More</Link>
+      <button onClick={() => setstatus(!status)}> {status?'Hide':'See'} info</button>
+      {
+        status&& <p>{name}</p>
+      }
     </div>
   );
 };
