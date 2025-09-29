@@ -7,17 +7,30 @@ const Sidebar = () => {
         <aside>
           <li>
             {" "}
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink className={"nav-Link"} to={"/"}>
+              Home
+            </NavLink>
           </li>
           <li>
             {" "}
-            <NavLink to={"News"}>News</NavLink>
+            <NavLink className={"nav-Link"} to={"News"}>
+              News
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"Mobiles"}>Mobiles</NavLink>
+            <NavLink className={"nav-Link"} to={"Mobiles"}>
+              Mobiles
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"Laptop"}>Laptop</NavLink>
+            <NavLink className={"nav-Link"} to={"Laptop"}>
+              Laptop
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-Link" to={"User"}>
+              User
+            </NavLink>
           </li>
         </aside>
       </div>

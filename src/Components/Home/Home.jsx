@@ -18,6 +18,9 @@ const Home = () => {
           <Link className="Navigationbar" to={"Laptop"}>
             Laptop
           </Link>
+          <Link className="Navigationbar" to={"User"}>
+            User
+          </Link>
         </nav>
       </div>
     );
