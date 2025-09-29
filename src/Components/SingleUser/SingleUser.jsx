@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 
 const SingleUser = ({ user }) => {
   const { name, id,} = user;
@@ -9,15 +9,21 @@ const SingleUser = ({ user }) => {
     margin:"30px"
   }
   const [status, setstatus] = useState(false);
+  const [HomeStatus, setHomeStatus] = useState(false);
+  if(HomeStatus){
+    return <Navigate to={'/'}></Navigate>
+  }
   return (
     <div style={Style}>
       <h1>{name}</h1>
       <h2>{user.address.city}</h2>
       <Link to={`/User/${id}`}>See More</Link>
-      <button onClick={() => setstatus(!status)}> {status?'Hide':'See'} info</button>
-      {
-        status&& <p>{name}</p>
-      }
+      <button onClick={() => setstatus(!status)}>
+        {" "}
+        {status ? "Hide" : "See"} info
+      </button>
+      {status && <p>{name}</p>}
+      <button onClick={() => setHomeStatus(true)}>Visit Home</button>
     </div>
   );
 };
